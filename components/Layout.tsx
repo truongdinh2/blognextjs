@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import React, { ReactNode } from 'react'
-import CommentsFb from './comment'
 
 
 type Props = {
