@@ -3,6 +3,7 @@ import { BLOCKS } from '@contentful/rich-text-types';
 import { GetStaticProps } from "next";
 import Image from 'next/image';
 import Link from "next/link";
+import Example from "../../components/comment";
 import Layout from "../../components/Layout";
 const contentful = require("contentful");
 const client = contentful.createClient({
@@ -20,7 +21,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     return {
         props: {
             artical: data.items[0],
-            test: data.items,
+            test: data.items[0].fields.slug,
             // test1:data
         }
     }
@@ -75,7 +76,7 @@ const Artical = ({ artical, test }: any) => {
                         }
                     )}
                 </div>
-                
+                <Example test={test}/>
             </Layout>
         </div>
     )
