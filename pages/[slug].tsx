@@ -78,6 +78,9 @@ const Artical = ({ artical, test }: any) => {
                             }
                         )}
                     </div>
+                    <div>
+                        <p style={{color:'chocolate',fontWeight:600}}>{artical.fields.tacgia}.</p>
+                    </div>
                     <Example test={test} />
                 </div>
             </Layout>

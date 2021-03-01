@@ -18,7 +18,6 @@ const router = useRouter();
 const pathname = router.pathname;
   return(
       <Layout title="List" pathname={pathname}>
-        
         <List  artical={artical} />
       </Layout>
     

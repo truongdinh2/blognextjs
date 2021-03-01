@@ -16,7 +16,6 @@ export default function ListBlog({ data }: any) {
         },
     });
     const classes = useStyles();
-    console.log(fields.image, 'iii', fields);
     const url = fields.image.fields.file.url;
     return (
         <div className={styles.card}>
