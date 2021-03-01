@@ -26,7 +26,7 @@ export default function ListBlog({ data }: any) {
                         <CardMedia
                             component="img"
                             alt={fields.title}
-                            height="100"
+                            height="150"
                             width="100"
                             image={url}
                             title={fields.title}

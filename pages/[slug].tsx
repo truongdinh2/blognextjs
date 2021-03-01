@@ -2,7 +2,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from '@contentful/rich-text-types';
 import { GetStaticProps } from "next";
 import Image from 'next/image';
-import Link from "next/link";
 import Example from "../components/comment";
 import Layout from "../components/Layout";
 const contentful = require("contentful");
@@ -52,26 +51,35 @@ const Artical = ({ artical, test }: any) => {
     return (
         <div>
             <Layout>
-                <div>
-                    {artical.fields.title}
-                </div>
-                <div>
-                    {artical.fields.date}
-                </div>
-                <div>
-                    {documentToReactComponents(artical.fields.content,
-                        {
-                            renderNode: {
-                                [BLOCKS.EMBEDDED_ASSET]: (node: any) =>
-                                (<Image
-                                    src={"https:" + node.data.target.fields.file.url}
-                                    width={500}
-                                    height={400} />)
+                <div style={{ maxWidth:'700px'}}>
+                    <div style={{margin:'5%'}}>
+                        <h1 style={{display:'flex',justifyContent:'center',alignContent:'center',color:'WindowText'}}>
+                             aTrường Blog
+                             </h1>
+                    </div>
+                    <div>
+                        <h2>
+                            {artical.fields.title}
+                        </h2>
+                    </div>
+                    <div>
+                        {artical.fields.date}
+                    </div>
+                    <div>
+                        {documentToReactComponents(artical.fields.content,
+                            {
+                                renderNode: {
+                                    [BLOCKS.EMBEDDED_ASSET]: (node: any) =>
+                                    (<Image
+                                        src={"https:" + node.data.target.fields.file.url}
+                                        width={500}
+                                        height={400} />)
+                                }
                             }
-                        }
-                    )}
+                        )}
+                    </div>
+                    <Example test={test} />
                 </div>
-                <Example test={test}/>
             </Layout>
         </div>
     )

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import React, { ReactNode } from 'react'
+import Pagination from './Pagination'
 import RefBlog from './Ref'
 
 
@@ -45,14 +46,16 @@ const Layout = ({ children, title = 'bloglog', pathname }: Props) => (
     </div>)}
     <div className="main">
       <div className="container1">
-        <div className="content">
+        <div className="content" style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
           1{children}
         </div>
       </div>
       <div className="container2">2</div>
 
     </div>
-
+    <div>
+      <Pagination/>
+    </div>
     <hr />
     <div className="footer">copyright @ dinh truong</div>
   </div>
