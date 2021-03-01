@@ -7,7 +7,7 @@ export default class Example extends Component {
     return (
       <>
       <FacebookProvider appId="265278211852595">
-        <Comments href={`http://localhost:3000/${test}`} />
+        <Comments href={`https://blognextjs12.vercel.app/${test}`} />
         <div>hi</div>
       </FacebookProvider>
     </>

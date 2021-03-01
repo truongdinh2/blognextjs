@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:700");
+@keyframes showTopText {
+    0% {
+        transform: translate3d(0, 100%, 0);
+    }
+    40%,
+    60% {
+        transform: translate3d(0, 50%, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        font-size: 4vmin;
+        padding: 1vmin 0;
+        position: absolute;
+    }
+}
+@keyframes showBottomText {
+    0% {
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+.animated_title {
+    color: #222;
+    font-family: Roboto, Arial, sans-serif;
+    height: 90vmin;
+    left: 60%;
+    position: absolute;
+    top: 38%;
+    transform: translate(-50%, -50%);
+    width: 90vmin;
+}
+.animated_title > div {
+    height: 50%;
+    overflow: hidden;
+    position: absolute;
+    width: 70%;
+}
+.animated_title > div div {
+    font-size: 8vmin;
+    padding: 2vmin 0;
+    position: absolute;
+}
+.animated_title > div div span {
+    display: block;
+}
+.animated_title > div.text_top {
+    border-bottom: 0.75vmin dotted pink;
+    top: 0;
+}
+.animated_title > div.text_top div {
+    animation: showTopText 2.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    bottom: 0;
+    /* animation-iteration-count: 3; */
+    transform: translate(0, 100%);
+}
+.animated_title > div.text_top div span:first-child {
+    color: white;
+}
+.animated_title > div.text_bottom {
+    color: whitesmoke;
+    bottom: 0;
+}
+.animated_title > div.text_bottom div {
+    animation: showBottomText;
+    animation-delay: 1.75s;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    /* animation-iteration-count: 3; */
+    top: 0;
+    transform: translate(0, -100%);
+}
+.text_top {
+    color: whitesmoke;
+}

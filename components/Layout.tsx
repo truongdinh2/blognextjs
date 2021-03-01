@@ -7,9 +7,10 @@ import RefBlog from './Ref'
 type Props = {
   children?: ReactNode
   title?: string
+  pathname?: string
 }
 
-const Layout = ({ children, title = 'bloglog' }: Props) => (
+const Layout = ({ children, title = 'bloglog', pathname }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -37,25 +38,11 @@ const Layout = ({ children, title = 'bloglog' }: Props) => (
           </Link>{' '}
         |{' '}
         </span>
-        {/* <span>
-          <Link href="/">
-            <a>Home</a>
-          </Link>{' '}
-        |{' '}
-        </span>
-        <Link href="/about">
-          <a>About</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/users">
-          <a>Users List</a>
-        </Link>{' '}
-        | <a href="/api/users">Users API</a> */}
       </nav>
     </header>
-    <div className="demo">
-      <RefBlog/>
-    </div>
+    {(pathname === '/' && <div className="demo">
+      <RefBlog />
+    </div>)}
     <div className="main">
       <div className="container1">
         <div className="content">

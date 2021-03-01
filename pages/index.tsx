@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Layout from '../components/Layout';
 import List from '../components/List';
 import React from 'react';
+import { useRouter } from 'next/dist/client/router';
 
 
 type Props = {
@@ -13,19 +14,12 @@ const client = contentful.createClient({
   accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN
 });
 const WithStaticProps = ({ artical }: Props) => {
-
+const router = useRouter();
+const pathname = router.pathname;
   return(
-    
-      <Layout title="List">
-        <div>
-        <h1>Users List</h1>
-        </div>
-        <p>
-          Example fetching data from inside <code>getStaticProps()</code>.
-        </p>
-        <p>You are currently on: /users</p>
+      <Layout title="List" pathname={pathname}>
+        
         <List  artical={artical} />
-      
       </Layout>
     
   )

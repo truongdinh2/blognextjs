@@ -1,10 +1,8 @@
-import * as React from 'react'
-import { User } from '../interfaces'
+import * as React from 'react';
+import styles from './List.module.css';
 import ListBlog from './ListBlog';
-import styles from './List.module.css'
 
 type Props = {
-  items: User[],
   artical:any
 }
 
