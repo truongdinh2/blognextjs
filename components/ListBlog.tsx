@@ -1,14 +1,12 @@
-import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Link from 'next/link';
 import React from 'react';
-import styles from './card.module.css'
+import styles from './card.module.css';
 export default function ListBlog({ data }: any) {
     const { fields } = data;
     const { slug } = fields;
