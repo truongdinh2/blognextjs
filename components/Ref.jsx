@@ -1,24 +1,21 @@
-import { Carousel } from 'antd';
-import Image from 'next/image';
-import React from 'react';
-import styles from './animationDemo/demo.module.css'
-const contentStyle = {
-    height: '400px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-};
-
+import { Carousel, message } from 'antd';
+import React, { useState } from 'react';
+import styles from './animationDemo/demo.module.css';
 export default function RefBlog() {
+    const [isPause,setIsPause] = useState(true);
+    const chat =  'Bạn đã pause băng ảnh'
+    const success = () => {
+        message.success(chat);
+      };
     return (
         <>
-            <Carousel autoplay>
+            <Carousel autoplay={isPause}>
                 <div className="background">
                     <div>
+                        
                         <img
+                            src="https://img.thuthuatphanmem.vn/uploads/2018/10/09/anh-dep-nhat-the-gioi-trong-tu-nhien_041753399.jpg"
                             className="img"
-                            src="https://www.w3schools.com/css/paris.jpg"
 
                         />
                     </div>
@@ -43,12 +40,19 @@ export default function RefBlog() {
                     <div>
 
                         <img
+                            src="https://www.w3schools.com/css/paris.jpg"
                             className="img"
-                            src="https://img.thuthuatphanmem.vn/uploads/2018/10/09/anh-dep-nhat-the-gioi-trong-tu-nhien_041753399.jpg"
                         />
                     </div>
                 </div>
             </Carousel>
+            {isPause && <img 
+                        src="https://image.pngaaa.com/286/351286-middle.png"
+                        height={50}
+                        width={70}
+                        onClick={()=>{setIsPause(!isPause);success()}}
+                        style={{cursor:'pointer',marginLeft:"47%"}}
+                        />}
             <div>
                 <div className={styles.animated_title}>
                     <div className={styles.text_top}>

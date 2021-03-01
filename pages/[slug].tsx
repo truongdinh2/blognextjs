@@ -51,10 +51,11 @@ const Artical = ({ artical, test }: any) => {
     return (
         <div>
             <Layout>
-                <div style={{ maxWidth:'700px'}}>
-                    <div style={{margin:'5%'}}>
-                        <h1 style={{display:'flex',justifyContent:'center',alignContent:'center',color:'WindowText'}}>
-                             aTrường Blog
+                <div style={{ maxWidth: '700px' }}>
+                    <div style={{ margin: '5%' }}>
+                        <h1 style={{ display: 'flex', justifyContent: 'center',
+                         alignContent: 'center', color: 'WindowText' }}>
+                            BLOG BY NEXTJS
                              </h1>
                     </div>
                     <div>
@@ -62,7 +63,15 @@ const Artical = ({ artical, test }: any) => {
                             {artical.fields.title}
                         </h2>
                     </div>
-                    <div>
+                    <div 
+                    style={{
+                        fontFamily:"sans-serif",
+                        fontSize:'12px',
+                        lineHeight:'20px',
+                        textDecoration: 'none solid rgb(51,51,51)',
+                        color:'#565656'
+                    }}
+                    >
                         {artical.fields.date}
                     </div>
                     <div>
@@ -79,7 +88,12 @@ const Artical = ({ artical, test }: any) => {
                         )}
                     </div>
                     <div>
-                        <p style={{color:'chocolate',fontWeight:600}}>{artical.fields.tacgia}.</p>
+                        <p style={{
+                            color: 'chocolate',fontStyle:'oblique',
+                            fontWeight: 600, textDecorationStyle: 'solid'
+                        }}>
+                            {artical.fields.tacgia}.
+                            </p>
                     </div>
                     <Example test={test} />
                 </div>

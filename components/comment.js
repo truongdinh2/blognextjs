@@ -3,12 +3,11 @@ import { FacebookProvider, Comments,CommentsCount,LoginButton } from 'react-face
  
 export default class Example extends Component {
   render() {
-    const {test} = this.props
+    const {test} = this.props;
     return (
       <>
       <FacebookProvider appId="265278211852595">
         <Comments href={`https://blognextjs12.vercel.app/${test}`} />
-        <div>hi</div>
       </FacebookProvider>
     </>
     );

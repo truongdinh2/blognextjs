@@ -8,14 +8,17 @@ type Props = {
 }
 
 const List = ({ artical }: Props) => {
-  const [minValue, setMinValue] = React.useState(0);
-  const [maxValue, setMaxValue] = React.useState(1);
-  const numPage = 5;
+  const [minValue, setMinValue] = React.useState(1);
+  const [maxValue, setMaxValue] = React.useState(2);
+  const numPage = 6;
+  React.useEffect(()=>{
+    handlePage(1)
+  },[])
   const handlePage = (value: any) => {
-    console.log(value);
     setMinValue((value - 1) * numPage);
     setMaxValue(value * numPage);
   }
+  console.log(minValue,maxValue);
   return (
     <>
       <div className={styles.blog}>
@@ -29,12 +32,12 @@ const List = ({ artical }: Props) => {
       }
       </div>
 
-      <div>
+      <div style={{marginTop:'50px'}}>
         <Pagination
           defaultCurrent={1}
           total={artical.length}
           onChange={handlePage}
-          showQuickJumper
+          // showQuickJumper
           defaultPageSize={numPage}
           showTotal={total => `Total ${total} items`}
         />
