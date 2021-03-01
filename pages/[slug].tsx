@@ -3,8 +3,8 @@ import { BLOCKS } from '@contentful/rich-text-types';
 import { GetStaticProps } from "next";
 import Image from 'next/image';
 import Link from "next/link";
-import Example from "../../components/comment";
-import Layout from "../../components/Layout";
+import Example from "../components/comment";
+import Layout from "../components/Layout";
 const contentful = require("contentful");
 const client = contentful.createClient({
     space: process.env.NEXT_CONTENTFUL_SPACE_ID,
@@ -57,11 +57,6 @@ const Artical = ({ artical, test }: any) => {
                 </div>
                 <div>
                     {artical.fields.date}
-                </div>
-                <div>
-                    <Link href="/users">
-                        <a>List Blog</a>
-                    </Link>
                 </div>
                 <div>
                     {documentToReactComponents(artical.fields.content,

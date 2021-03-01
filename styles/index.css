@@ -1,8 +1,49 @@
 /* body{
     background-color: blue;
 } */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 40%; */
+}
+nav span{
+    margin-left: 5px;
+}
+nav span a:hover{
+  color: red;
+}
+/* main*/
 
 a {
     text-decoration: aqua;
     cursor: pointer;
 }
+.main{
+    min-height: 83.7vh;
+    display: flex;
+    margin-top: 30px;
+    
+}
+.container1{
+    flex-basis: 80%;
+    border-right:1px dotted #999999;
+}
+.container2{
+    min-width: 200px;
+}
+.content{
+    margin-left: 20%;
+    margin-right: 5px;
+}
+
+/* footer*/
+
+.footer {
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-style: italic;
+  }

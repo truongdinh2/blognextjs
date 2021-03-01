@@ -1,23 +1,17 @@
 import * as React from 'react'
-import ListItem from './ListItem'
 import { User } from '../interfaces'
-import ListBlog from './ListBlog'
+import ListBlog from './ListBlog';
+import styles from './List.module.css'
 
 type Props = {
   items: User[],
   artical:any
 }
 
-const List = ({ items,artical }: Props) => (
+const List = ({ artical }: Props) => (
   <>
-  <ul>
-    {items.map((item) => (
-      <li key={item.id}>
-        <ListItem data={item} />
-      </li>
-    ))}
-  </ul>
-  <div>
+  
+  <div className={styles.blog}>
     {artical.map((items:any,index:number)=>(
       <div key={index}>
         <ListBlog data={items}/>

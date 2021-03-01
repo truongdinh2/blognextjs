@@ -19,5 +19,5 @@
     "target": "esnext"
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "components/comment.js"]
+  "include": ["**/*.ts", "**/*.tsx", "components/comment.js", "components/Ref.jsx"]
 }
