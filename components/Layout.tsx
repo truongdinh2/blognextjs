@@ -9,10 +9,9 @@ type Props = {
   children?: ReactNode
   title?: string
   pathname?: string
-  artical?: any
 }
 
-const Layout = ({ children, title = 'bloglog', pathname, artical }: Props) => {
+const Layout = ({ children, title = 'bloglog', pathname }: Props) => {
   const [theme, setTheme] = useState<string>('dark');
   const switchTheme = (theme: string) => {
     if (theme === 'dark') {
