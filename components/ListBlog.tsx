@@ -4,6 +4,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import moment from 'moment';
 import Link from 'next/link';
 import React from 'react';
 import styles from './card.module.css';
@@ -37,6 +38,9 @@ export default function ListBlog({ data }: any) {
                             <Typography variant="body2" color="textSecondary" component="p">
                                 {fields.demo}
                             </Typography>
+                            <i>
+                            {moment(fields.date).startOf('day').fromNow()}
+                            </i>
                         </CardContent>
                     </CardActionArea>
                 </Link>

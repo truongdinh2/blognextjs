@@ -1,5 +1,6 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from '@contentful/rich-text-types';
+import moment from "moment";
 import { GetStaticProps } from "next";
 import Image from 'next/image';
 import Example from "../components/comment";
@@ -61,7 +62,7 @@ const Artical = ({ artical, test }: any) => {
                                 color: '#565656'
                             }}
                         >
-                            {artical.fields.date}
+                            {moment(artical.fields.date).locale('vi').format('LLL')}
                         </div>
                         <div>
                             {documentToReactComponents(artical.fields.content,
@@ -85,8 +86,8 @@ const Artical = ({ artical, test }: any) => {
                             </p>
                         </div>
                     </div>
-                    <Example test={test} />
                 </div>
+                    <Example test={test} />
             </Layout>
         </div>
     )
