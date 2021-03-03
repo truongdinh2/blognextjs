@@ -36,10 +36,10 @@ export const getStaticPaths = async () => {
         })), fallback: false
     }
 }
-const Artical = ({ artical, test,value }: any) => {
+const Artical = ({ artical, test }: any) => {
     return (
         <div>
-            <Layout artical={value} title={artical.fields.title}>
+            <Layout  title={artical.fields.title}>
                 <div  className={styles.container}>
                     <div style={{minHeight:'60vh'}}className={styles.main}>
                         <div className={styles.content  }>
