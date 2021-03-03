@@ -1,36 +1,32 @@
-import { GetStaticProps } from 'next'
-import React from 'react'
-import ListBlog from './ListBlog'
-const contentful = require("contentful");
-const client = contentful.createClient({
-  space: process.env.NEXT_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN
-});
-export default function Side({artical}:any) {
-    return (
-        <div>
-            <div >
-                {
-                    artical.map(
-                        (items: any, index: number) => (
-                            <div key={index}>
-                                <ListBlog data={items} />
-                            </div>
-                        ))
-                }
-            </div>
-        </div>
-    )
+import { FacebookFilled, InstagramFilled, TwitterCircleFilled } from '@ant-design/icons'
+import styles from './side.module.css'
+
+export default function Side() {
+  return (
+    // <Anchor>
+    //   <Link href="#components-anchor-demo-basic" title="Basic demo" />
+    //   <Link href="#components-anchor-demo-static" title="Static demo" />
+    //   <Link href="#API" title="API">
+    //     <Link href="#Anchor-Props" title="Anchor Props" />
+    //     <Link href="#Link-Props" title="Link Props" />
+    //   </Link>
+    // </Anchor>
+    <div className={styles.icon_contai}>
+      <div className={styles.icon_item1}>
+        <a href="#hi">
+        <FacebookFilled style={{fontSize:'200%',color: 'rbg(255,0,0)'}} />
+        </a>
+      </div>
+      <div className={styles.icon_item2}>
+        <a href="#inst">
+        <InstagramFilled style={{fontSize:'200%',color:"pink"}}/>
+        </a>
+      </div>
+      <div className={styles.icon_item3}>
+        <a href="#twiter">
+        <TwitterCircleFilled style={{fontSize:'200%',marginBottom:'5px'}}/>
+        </a>
+      </div>
+    </div>
+  )
 }
-export const getStaticProps: GetStaticProps = async (context) => {
-    const params = context.params
-    let data = await client.getEntries({
-      content_type: 'category',
-      'fields.slug': params?.slug
-    });
-    return {
-      props: {
-        artical: data.items,
-      }
-    }
-  }

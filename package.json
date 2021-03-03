@@ -8,6 +8,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.5.0",
     "@contentful/rich-text-react-renderer": "^14.1.2",
     "@material-ui/core": "^4.11.3",
     "antd": "^4.13.0",

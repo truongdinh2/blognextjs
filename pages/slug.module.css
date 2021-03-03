@@ -1,0 +1,14 @@
+/* @import '../styles/private.css'; */
+.container{
+    max-width: 800px;
+    margin-left: 10%;
+}
+.container {
+    /* border: 1px solid black; */
+    margin-top: 2%;
+}
+
+.content h1{
+    padding-left: 32%;
+    margin-bottom: 6%;
+}

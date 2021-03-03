@@ -1,6 +1,11 @@
-.card{
+.card {
     max-width: 300px;
     max-height: 400px;
     min-height: 350px;
     /* margin-left: 50px; */
+}
+@media screen and (min-width: 1677px) {
+    .card {
+        margin-left: 100px;
+    }
 }

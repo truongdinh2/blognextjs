@@ -1,42 +1,69 @@
 /* body{
     background-color: blue;
 } */
+@import "private.css";
+/* @import '../pages/slug.module.css';
+.container *{
+    color: var(--text-color) !important;
+} */
+body{
+    background-color: var(--back-ground) !important;
+}
+body *:not(.anticon,.anticon-facebook,a,svg path) {
+    color: var(--text-color) ;
+}
+.MuiPaper-root.MuiCard-root{
+    background-color: var(--background-box) !important;
+}
+body h1{
+    color: var(--text-color) ;
+}
+body h2{
+    color: var(--text-color) ;
+}
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 130%;
-    /* margin-left: 40%; */
     margin-bottom: 1%;
-    width: 97%;
+    width: 100%;
 }
 nav span {
     margin-left: 5px;
+    max-width: 100px;
 }
 nav span a:hover {
     color: red;
 }
+.switch{
+    height: 50%;
+    width: 50%;
+}
 /* main*/
 
 a {
-    text-decoration: aqua;
+    text-decoration: aqua !important;
     cursor: pointer;
 }
 .main {
     min-height: 83.7vh;
     display: flex;
+    flex-direction: row;
     margin-top: 30px;
 }
 .container1 {
     flex-basis: 80%;
-    border-right: 1px dotted #999999;
+    border-right: 1px dotted #999999 
+
 }
 .container2 {
-    min-width: 200px;
+    min-width: 50px;
 }
 .content {
     margin-left: 20%;
     margin-right: 5px;
+    height: 100%;
 }
 
 /* footer*/
@@ -62,4 +89,14 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+@media screen and (max-width:600px){
+    .container2 {
+    max-width: 40px;
+    }
+    .container1 {
+        flex-basis: 80%;
+        border-right: none !important;
+    
+    }
 }

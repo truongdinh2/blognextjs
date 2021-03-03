@@ -1,0 +1,41 @@
+.icon_contai {
+    display: flex;
+    flex-flow: column wrap;
+    position: fixed;
+    z-index: 100;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7%;
+}
+.icon_item1 span svg path,.icon_item3 span svg path{
+color: royalblue !important;
+}
+.icon_item2 span svg path{
+color: pink !important;
+}
+@media screen and (max-width: 600px) {
+    .icon_contai {
+        width: 70px;
+        margin-left: 20px;
+    }
+    .icon_item3 img {
+        /* transform: translateX(-8px) !important; */
+        transform: translateY(-15px);
+        width: 40px;
+        height: 40px;
+    }
+    .icon_item2 img {
+        width: 60px;
+        height: 40px;
+        margin-left:5px ;
+    }
+    .icon_item1 img {
+        width: 40px;
+        height: 20px;
+    }
+    .icon_contai div{
+        margin-bottom: 3px;
+    }
+}

@@ -1,6 +1,7 @@
 import { Carousel, message } from 'antd';
 import React, { useState } from 'react';
 import styles from './animationDemo/demo.module.css';
+import {PauseCircleTwoTone} from '@ant-design/icons'
 export default function RefBlog() {
     const [isPause,setIsPause] = useState(true);
     const chat =  'Bạn đã pause băng ảnh'
@@ -46,23 +47,22 @@ export default function RefBlog() {
                     </div>
                 </div>
             </Carousel>
-            {isPause && <img 
-                        src="https://image.pngaaa.com/286/351286-middle.png"
-                        height={50}
-                        width={70}
+            {isPause && 
+                        <PauseCircleTwoTone 
                         onClick={()=>{setIsPause(!isPause);success()}}
-                        style={{cursor:'pointer',marginLeft:"47%"}}
-                        />}
+                        style={{cursor:'pointer',marginLeft:"50%",position:'relative'
+                        ,zIndex:11,fontSize:'200%',marginTop:'5px'}}/>
+                        }
             <div>
                 <div className={styles.animated_title}>
                     <div className={styles.text_top}>
                         <div>
-                            <span>Hello you</span>
-                            <span>Welcom to</span>
+                            <span style={{color:'white'}}>Hello you</span>
+                            <span style={{color:'white'}}>Welcom to</span>
                         </div>
                     </div>
                     <div className={styles.text_bottom}>
-                        <div>My blog!</div>
+                        <div style={{color:'white'}}>My blog!</div>
                     </div>
                 </div>
             </div>
