@@ -10,8 +10,8 @@ type Props = {
 }
 const contentful = require("contentful");
 const client = contentful.createClient({
-  space: process.env.NEXT_CONTENTFUL_SPACE_ID,
-  accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
 });
 
 
@@ -32,7 +32,7 @@ const router = useRouter();
 const pathname = router.pathname;
 console.log(artical)
   return(
-      <Layout title="List" pathname={pathname} >
+      <Layout title="List" pathname={pathname} artical={artical} >
         <List  artical={artical} />
       </Layout>
     

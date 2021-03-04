@@ -1,18 +1,24 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import React, { ReactNode, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 import RefBlog from './Ref'
 import Side from './side'
-
-
 type Props = {
   children?: ReactNode
   title?: string
-  pathname?: string
+  pathname?: string,
+  artical?: any
 }
-
-const Layout = ({ children, title = 'bloglog', pathname }: Props) => {
+const Layout = ({ children, title = 'bloglog', pathname, artical }: Props) => {
   const [theme, setTheme] = useState<string>('dark');
+  const [category, setCategory] = useState<string[]>([]);
+  useEffect(() => {
+    setUpData()
+  }, [])
+  const test = category.filter((item, index) => {
+    return category.indexOf(item) === index
+  })
+  console.log(artical, test)
   const switchTheme = (theme: string) => {
     if (theme === 'dark') {
       setTheme('light')
@@ -22,7 +28,10 @@ const Layout = ({ children, title = 'bloglog', pathname }: Props) => {
       document.documentElement.setAttribute("data-theme", "dark")
     }
   }
-  console.log(theme)
+  const setUpData = () => {
+    const newArticalList = artical.map((item: any) => item.fields.Artical)
+    setCategory([...category, ...newArticalList])
+  }
   return (
     <div>
       <Head>
@@ -48,12 +57,15 @@ const Layout = ({ children, title = 'bloglog', pathname }: Props) => {
             </Link>{' '}
         |{' '}
           </span>
-          <span>
-            <Link href="/gop-y">
-              <a>Góp ý</a>
-            </Link>{' '}
-        |{' '}
-          </span>
+          {test.map((items,index)=>{
+            return (
+              <span key={index}>
+                <Link href="/">
+                  <a>{items}</a>
+                </Link>{' '}|{' '}
+              </span>
+            )
+          })}
           <span>
             <span onClick={() => switchTheme(theme)} style={{ cursor: "pointer" }}>
               {
@@ -67,9 +79,9 @@ const Layout = ({ children, title = 'bloglog', pathname }: Props) => {
 
         </nav>
       </header>
-      {(pathname === '/' && <div className="demo">
+      {(pathname === '/' || 'hi') && <div className="demo">
         <RefBlog />
-      </div>)}
+      </div>}
       <div className="main">
         <div className="container1">
           <div className="content" style={{
