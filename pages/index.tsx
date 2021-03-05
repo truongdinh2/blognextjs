@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import List from '../components/List';
 import React from 'react';
 import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
 
 
 type Props = {
@@ -34,6 +35,9 @@ console.log(artical)
   return(
       <Layout title="List" pathname={pathname} artical={artical} >
         <List  artical={artical} />
+        <Link href="/[theloai" as={`/${artical[0].fields.slug}`}>
+          <a>hihihi</a>
+        </Link>
       </Layout>
     
   )

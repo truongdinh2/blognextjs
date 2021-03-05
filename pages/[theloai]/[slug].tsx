@@ -35,13 +35,16 @@ export const getStaticPaths = async () => {
     return {
         paths: data.items.map((item: any) => ({
             params: { slug: item.fields.slug,
+                theloai:item.fields.slug
          }
         })), fallback: false
     }
 }
-const Artical = ({ artical, test,value }: any) => {
+const Artical = ({artical,value,test}:any) => {
+    console.log(artical)
     return (
         <div>
+            hihihi
             <Layout  title={artical.fields.title} artical={value}>
                 <div  className={styles.container}>
                     <div style={{minHeight:'60vh'}}className={styles.main}>
