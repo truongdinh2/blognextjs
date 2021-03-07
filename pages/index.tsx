@@ -29,18 +29,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 }
 const WithStaticProps = ({ artical }: Props) => {
-const router = useRouter();
-const pathname = router.pathname;
-console.log(artical)
-  return(
+  const router = useRouter();
+  const pathname = router.pathname;
+  console.log(artical)
+  return (
+    <>
       <Layout title="List" pathname={pathname} artical={artical} >
-        <List  artical={artical} />
-        <Link href="/[theloai" as={`/${artical[0].fields.slug}`}>
-          <a>hihihi</a>
-        </Link>
+        <List artical={artical} />
       </Layout>
-    
+    </>
   )
 }
-  export default WithStaticProps;
+export default WithStaticProps;
 

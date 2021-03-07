@@ -11,14 +11,46 @@ type Props = {
 }
 const Layout = ({ children, title = 'bloglog', pathname, artical }: Props) => {
   const [theme, setTheme] = useState<string>('dark');
-  const [category, setCategory] = useState<string[]>([]);
+  const [category, setCategory] = useState<any[]>([]);
   useEffect(() => {
     setUpData()
+    // filter()
   }, [])
-  const test = category.filter((item, index) => {
-    return category.indexOf(item) === index
-  })
-  console.log(artical, test)
+//
+var objet = category.map(i => JSON.stringify(i)); 
+let uni = new Set(objet);
+let unia = Array.from(uni).map(i => JSON.parse(i))
+// category.map((item)=>{
+//   var x;
+//   var list = [];
+//   for(x=0;x<=category.length;x++){
+//     if(JSON.stringify(item)!==JSON.stringify(category[x])){
+//       // console.log(x);
+//       list.push(item)
+//     }
+//   }
+//   console.log(list);
+// })
+//
+  // filter
+  // const filter = () => {
+  //   var x = 0;
+  //   var len = category.length;
+  //   var list = [];
+  //   for (x; x <= len; x++) {
+  //     var y;
+  //     for ( y = x + 1; y<=len; y++){
+  //       return y;
+  //     }
+  //     while(category[x]!==category[y]){
+  //       console.log(x);
+  //     }
+  //   }
+  // }
+  // console.log( category)
+  // const test = category.filter((items)=>{
+  //   return items
+  // })
   const switchTheme = (theme: string) => {
     if (theme === 'dark') {
       setTheme('light')
@@ -29,7 +61,11 @@ const Layout = ({ children, title = 'bloglog', pathname, artical }: Props) => {
     }
   }
   const setUpData = () => {
-    const newArticalList = artical.map((item: any) => item.fields.Artical)
+    const newArticalList = artical.map((item: any) => {
+      return (
+        { tv: item.fields.Artical, slug: item.fields.catego })
+    })
+    console.log(newArticalList);
     setCategory([...category, ...newArticalList])
   }
   return (
@@ -57,11 +93,11 @@ const Layout = ({ children, title = 'bloglog', pathname, artical }: Props) => {
             </Link>{' '}
         |{' '}
           </span>
-          {test.map((items,index)=>{
+          {unia.map((items,index)=>{
             return (
               <span key={index}>
-                <Link href="/">
-                  <a>{items}</a>
+                <Link href="/[theloai]" as={`/${items.slug}`} >
+                  <a>{items.tv}</a>
                 </Link>{' '}|{' '}
               </span>
             )
@@ -93,11 +129,9 @@ const Layout = ({ children, title = 'bloglog', pathname, artical }: Props) => {
           </div>
         </div>
         <div className="container2">
-          {pathname !== '/' &&
             <div>
               <Side />
             </div>
-          }
         </div>
 
       </div>

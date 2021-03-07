@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     return {
         props: {
             artical: data.items[0],
-            value:data1.items,
+            value: data1.items,
             test: data.items[0].fields.slug,
         }
     }
@@ -34,21 +34,21 @@ export const getStaticPaths = async () => {
     });
     return {
         paths: data.items.map((item: any) => ({
-            params: { slug: item.fields.slug,
-                theloai:item.fields.slug
-         }
+            params: {
+                slug: item.fields.slug,
+                theloai: item.fields.catego
+            }
         })), fallback: false
     }
 }
-const Artical = ({artical,value,test}:any) => {
+const Artical = ({ artical, value, test }: any) => {
     console.log(artical)
     return (
         <div>
-            hihihi
-            <Layout  title={artical.fields.title} artical={value}>
-                <div  className={styles.container}>
-                    <div style={{minHeight:'60vh'}}className={styles.main}>
-                        <div className={styles.content  }>
+            <Layout title={artical.fields.title} artical={value}>
+                <div className={styles.container}>
+                    <div style={{ minHeight: '60vh' }} className={styles.main}>
+                        <div className={styles.content}>
                             <h1 >
                                 BLOG BY NEXTJS
                              </h1>
@@ -92,7 +92,7 @@ const Artical = ({artical,value,test}:any) => {
                         </div>
                     </div>
                 </div>
-                    <Example test={test} />
+                <Example test={test} />
             </Layout>
         </div>
     )

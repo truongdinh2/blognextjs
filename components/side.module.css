@@ -2,7 +2,8 @@
     display: flex;
     flex-flow: column wrap;
     position: fixed;
-    z-index: 100;
+    top:200px;
+    z-index: -1;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
     align-items: center;

@@ -90,6 +90,10 @@ a {
     justify-content: center;
     align-items: center;
 }
+/**/
+.MuiTypography-body2{
+    font-size: 0.7rem !important;
+}
 @media screen and (max-width:600px){
     .container2 {
     max-width: 40px;
@@ -99,4 +103,5 @@ a {
         border-right: none !important;
     
     }
+    /* body */
 }

@@ -12,9 +12,9 @@ import styles from './card.module.css';
 export default function ListBlog({ data }: any) {
     // const router = useRouter()
     const router = useRouter()
-    console.log(router.query)
     const { fields } = data;
     const { slug } = fields;
+    const { catego } = fields;
     const useStyles = makeStyles({
         root: {
             maxWidth: 345,
@@ -24,9 +24,9 @@ export default function ListBlog({ data }: any) {
     const url = fields.image.fields.file.url;
     return (
         <div className={styles.card}>
-            
+
             <Card className={classes.root} >
-                <Link href="/[theloai]/[slug]" as={`/theloai/${slug}`} >
+                <Link href="/[theloai]/[slug]" as={`/${catego}/${slug}`} >
                     <a>
                         <CardActionArea>
                             <CardMedia
@@ -52,9 +52,6 @@ export default function ListBlog({ data }: any) {
                     </a>
                 </Link>
             </Card>
-            <Link href="/[category]" as="/hi">
-          <a>test</a>
-        </Link>
         </div>
     )
 }

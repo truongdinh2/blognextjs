@@ -2,10 +2,16 @@
     max-width: 300px;
     max-height: 400px;
     min-height: 350px;
-    /* margin-left: 50px; */
+    margin-left: 50px;
+    margin-bottom: 50px !important;
+    display: flex;
+    align-items: center;
 }
 @media screen and (min-width: 1677px) {
     .card {
         margin-left: 100px;
     }
+}
+.card h2{
+    font-size: 3.6vmin !important;
 }
