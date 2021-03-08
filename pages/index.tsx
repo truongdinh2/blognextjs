@@ -1,9 +1,8 @@
 import { GetStaticProps } from 'next';
+import { useRouter } from 'next/dist/client/router';
+import React from 'react';
 import Layout from '../components/Layout';
 import List from '../components/List';
-import React from 'react';
-import { useRouter } from 'next/dist/client/router';
-import Link from 'next/link';
 
 
 type Props = {

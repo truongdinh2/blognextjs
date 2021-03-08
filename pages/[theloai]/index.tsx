@@ -1,7 +1,5 @@
 import { GetStaticProps } from 'next';
-import { useRouter } from 'next/dist/client/router'
-import Link from 'next/link'
-import React from 'react'
+import React from 'react';
 import Layout from '../../components/Layout';
 import List from '../../components/List';
 const contentful = require("contentful");
@@ -40,9 +38,6 @@ export const getStaticPaths = async () => {
     }
 }
 export default function Page({ artical, data1 }: any) {
-    const router = useRouter();
-    const { theloai } = router.query;
-    console.log(data1)
     // console.log(data)
     return (
         <div>

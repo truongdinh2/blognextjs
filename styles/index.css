@@ -92,7 +92,7 @@ a {
 }
 /**/
 .MuiTypography-body2{
-    font-size: 0.7rem !important;
+    font-size: 0.8rem !important;
 }
 @media screen and (max-width:600px){
     .container2 {

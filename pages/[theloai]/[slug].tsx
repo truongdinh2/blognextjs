@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         props: {
             artical: data.items[0],
             value: data1.items,
-            test: data.items[0].fields.slug,
+            test: data.items[0].fields,
         }
     }
 }
