@@ -5,13 +5,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import moment from 'moment';
-import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 import React from 'react';
 import styles from './card.module.css';
 export default function ListBlog({ data }: any) {
     // const router = useRouter()
-    const router = useRouter()
     const { fields } = data;
     const { slug } = fields;
     const { catego } = fields;
